@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS2 Customization Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🎮 CS2 Customization Manager</h1>
+            <p class="subtitle">HUD • Weapons • Settings • Profiles</p>
+        </header>
+
+        <nav class="navbar">
+            <button class="nav-btn active" data-tab="hud">HUD Design</button>
+            <button class="nav-btn" data-tab="weapons">Weapons</button>
+            <button class="nav-btn" data-tab="settings">Einstellungen</button>
+            <button class="nav-btn" data-tab="profiles">Profile</button>
+            <button class="nav-btn" data-tab="export">Export/Import</button>
+        </nav>
+
+        <!-- HUD TAB -->
+        <section id="hud" class="tab-content active">
+            <h2>HUD Design</h2>
+            
+            <div class="presets">
+                <h3>Presets</h3>
+                <button class="preset-btn" data-preset="competitive">⚡ Competitive</button>
+                <button class="preset-btn" data-preset="casual">🎉 Casual</button>
+                <button class="preset-btn" data-preset="minimalist">🎯 Minimalist</button>
+            </div>
+
+            <div class="settings-grid">
+                <div class="setting-group">
+                    <label>Radar Scale</label>
+                    <input type="range" id="radarScale" min="0.5" max="2" step="0.1" value="1">
+                    <span class="value-display" id="radarScaleValue">1</span>
+                </div>
+
+                <div class="setting-group">
+                    <label>HUD Scale</label>
+                    <input type="range" id="hudScale" min="0.5" max="1.5" step="0.1" value="0.85">
+                    <span class="value-display" id="hudScaleValue">0.85</span>
+                </div>
+
+                <div class="setting-group">
+                    <label>Death Notices</label>
+                    <select id="deathnotices">
+                        <option value="0">Aus</option>
+                        <option value="1">An</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label>Radar Rotating</label>
+                    <select id="radarRotating">
+                        <option value="0">Aus</option>
+                        <option value="1" selected>An</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="crosshair-section">
+                <h3>Crosshair Settings</h3>
+                <div class="settings-grid">
+                    <div class="setting-group">
+                        <label>Crosshair Style</label>
+                        <select id="crosshairStyle">
+                            <option value="0">Default</option>
+                            <option value="1">Dynamic</option>
+                            <option value="4" selected>Classic</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Größe</label>
+                        <input type="range" id="crosshairSize" min="0" max="20" step="0.5" value="2">
+                        <span class="value-display" id="crosshairSizeValue">2</span>
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Dicke</label>
+                        <input type="range" id="crosshairThickness" min="0" max="2" step="0.1" value="0.5">
+                        <span class="value-display" id="crosshairThicknessValue">0.5</span>
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Gap</label>
+                        <input type="range" id="crosshairGap" min="-5" max="5" step="0.5" value="-2">
+                        <span class="value-display" id="crosshairGapValue">-2</span>
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Farbe (RGB)</label>
+                        <div class="color-inputs">
+                            <input type="number" id="crosshairColorR" min="0" max="255" value="0" placeholder="R">
+                            <input type="number" id="crosshairColorG" min="0" max="255" value="255" placeholder="G">
+                            <input type="number" id="crosshairColorB" min="0" max="255" value="0" placeholder="B">
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Outline</label>
+                        <select id="crosshairOutline">
+                            <option value="0">Aus</option>
+                            <option value="1" selected>An</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-primary" id="saveHUD">💾 HUD Speichern</button>
+        </section>
+
+        <!-- WEAPONS TAB -->
+        <section id="weapons" class="tab-content">
+            <h2>Weapon Skins Manager</h2>
+            
+            <div class="weapon-loadout">
+                <h3>Weapon Loadout</h3>
+                <div id="weaponList" class="weapon-list">
+                    <!-- Wird dynamisch gefüllt -->
+                </div>
+            </div>
+
+            <div class="settings-grid">
+                <div class="setting-group">
+                    <label>Viewmodel FOV</label>
+                    <input type="range" id="viewmodelFov" min="54" max="68" step="1" value="70">
+                    <span class="value-display" id="viewmodelFovValue">70</span>
+                </div>
+
+                <div class="setting-group">
+                    <label>Viewmodel Offset X</label>
+                    <input type="range" id="offsetX" min="-10" max="10" step="0.5" value="0">
+                    <span class="value-display" id="offsetXValue">0</span>
+                </div>
+
+                <div class="setting-group">
+                    <label>Viewmodel Offset Y</label>
+                    <input type="range" id="offsetY" min="-10" max="10" step="0.5" value="0">
+                    <span class="value-display" id="offsetYValue">0</span>
+                </div>
+
+                <div class="setting-group">
+                    <label>Viewmodel Offset Z</label>
+                    <input type="range" id="offsetZ" min="-10" max="10" step="0.5" value="0">
+                    <span class="value-display" id="offsetZValue">0</span>
+                </div>
+            </div>
+
+            <button class="btn-primary" id="saveWeapons">💾 Waffen Speichern</button>
+        </section>
+
+        <!-- SETTINGS TAB -->
+        <section id="settings" class="tab-content">
+            <h2>Game Settings</h2>
+            
+            <div class="settings-section">
+                <h3>🎥 Video Settings</h3>
+                <div class="settings-grid">
+                    <div class="setting-group">
+                        <label>Max FPS</label>
+                        <input type="number" id="fpsMax" min="30" max="500" value="300">
+                    </div>
+                    <div class="setting-group">
+                        <label>VSync</label>
+                        <select id="vsync">
+                            <option value="0" selected>Aus</option>
+                            <option value="1">An</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>Anti-Alias</label>
+                        <select id="antiAlias">
+                            <option value="0">Aus</option>
+                            <option value="1">2x MSAA</option>
+                            <option value="2" selected>4x MSAA</option>
+                            <option value="3">8x MSAA</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>Gamma</label>
+                        <input type="range" id="gamma" min="1" max="3" step="0.1" value="2.2">
+                        <span class="value-display" id="gammaValue">2.2</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>🔊 Audio Settings</h3>
+                <div class="settings-grid">
+                    <div class="setting-group">
+                        <label>Master Volume</label>
+                        <input type="range" id="masterVolume" min="0" max="1" step="0.1" value="1">
+                        <span class="value-display" id="masterVolumeValue">1</span>
+                    </div>
+                    <div class="setting-group">
+                        <label>Music Volume</label>
+                        <input type="range" id="musicVolume" min="0" max="1" step="0.1" value="0.05">
+                        <span class="value-display" id="musicVolumeValue">0.05</span>
+                    </div>
+                    <div class="setting-group">
+                        <label>Headphone Pan</label>
+                        <input type="range" id="headphonePan" min="1" max="5" step="0.5" value="2">
+                        <span class="value-display" id="headphonePanValue">2</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>⚙️ Gameplay Settings</h3>
+                <div class="settings-grid">
+                    <div class="setting-group">
+                        <label>Show FPS</label>
+                        <select id="showFps">
+                            <option value="0" selected>Aus</option>
+                            <option value="1">An</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>Net Graph</label>
+                        <select id="netGraph">
+                            <option value="0" selected>Aus</option>
+                            <option value="1">An</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>Auto Weapon Switch</label>
+                        <select id="autoWeaponSwitch">
+                            <option value="0" selected>Aus</option>
+                            <option value="1">An</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>Net Rate</label>
+                        <input type="number" id="rate" min="64000" max="1000000" value="786432">
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn-primary" id="saveSettings">💾 Einstellungen Speichern</button>
+        </section>
+
+        <!-- PROFILES TAB -->
+        <section id="profiles" class="tab-content">
+            <h2>Profile Manager</h2>
+            
+            <div class="profile-controls">
+                <input type="text" id="profileName" placeholder="Profilname eingeben...">
+                <button class="btn-primary" id="saveProfile">💾 Profil Speichern</button>
+            </div>
+
+            <div class="profiles-list">
+                <h3>Gespeicherte Profile</h3>
+                <div id="profilesList" class="list-items">
+                    <!-- Wird dynamisch gefüllt -->
+                </div>
+            </div>
+
+            <button class="btn-primary" id="createBackup">🔄 Backup Erstellen</button>
+        </section>
+
+        <!-- EXPORT/IMPORT TAB -->
+        <section id="export" class="tab-content">
+            <h2>Export & Import</h2>
+            
+            <div class="export-section">
+                <h3>📤 Exportieren</h3>
+                <p>Exportiere deine aktuelle Konfiguration als JSON-Datei</p>
+                <button class="btn-primary" id="exportConfig">📥 Config Exportieren</button>
+            </div>
+
+            <div class="import-section">
+                <h3>📥 Importieren</h3>
+                <p>Importiere eine gespeicherte Konfiguration</p>
+                <input type="file" id="importFile" accept=".json">
+                <button class="btn-primary" id="importConfig">📤 Config Importieren</button>
+            </div>
+
+            <div class="autoexec-section">
+                <h3>🔧 Autoexec Generator</h3>
+                <p>Generiere eine fertige autoexec.cfg für CS2</p>
+                <button class="btn-primary" id="generateAutoexec">⚙️ autoexec.cfg Generieren</button>
+                <textarea id="autoexecPreview" readonly placeholder="Autoexec Preview wird hier angezeigt..."></textarea>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>CS2 Customization Manager by q26015373-coder | <a href="https://github.com/q26015373-coder/cs2-config" target="_blank">GitHub</a></p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
