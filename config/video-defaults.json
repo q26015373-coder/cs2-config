@@ -1,0 +1,17 @@
+{
+  "antiAlias": 2,
+  "antiAliasMode": 7,
+  "queueMode": -1,
+  "fpsMax": 300,
+  "gamma": 2.2,
+  "dynamic": 1,
+  "noMatch": 1,
+  "resolution": {
+    "width": 1920,
+    "height": 1080,
+    "refreshRate": 144
+  },
+  "graphicsQuality": "high",
+  "vsync": 0,
+  "motionBlur": 0
+}
