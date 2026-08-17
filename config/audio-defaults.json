@@ -1,0 +1,10 @@
+{
+  "masterVolume": 1,
+  "musicVolume": 0.05,
+  "mvpVolume": 1,
+  "headphonePan": 2,
+  "frontHeadphone": 45,
+  "rearHeadphone": 90,
+  "enhanceStereo": 0,
+  "surroundSound": 1
+}
