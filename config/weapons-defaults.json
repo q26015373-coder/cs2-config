@@ -1,0 +1,39 @@
+{
+  "viewmodelRecoil": 1,
+  "viewmodelFov": 70,
+  "offsetX": 0,
+  "offsetY": 0,
+  "offsetZ": 0,
+  "bobStyle": 0,
+  "weaponSkins": {
+    "knife": {
+      "name": "Messer",
+      "skin": "",
+      "float": ""
+    },
+    "ak47": {
+      "name": "AK-47",
+      "skin": "",
+      "float": "",
+      "stattrak": false
+    },
+    "m4a4": {
+      "name": "M4A4",
+      "skin": "",
+      "float": "",
+      "stattrak": false
+    },
+    "awp": {
+      "name": "AWP Dragon Lore",
+      "skin": "",
+      "float": "",
+      "stattrak": false
+    },
+    "deagle": {
+      "name": "Desert Eagle",
+      "skin": "",
+      "float": "",
+      "stattrak": false
+    }
+  }
+}
