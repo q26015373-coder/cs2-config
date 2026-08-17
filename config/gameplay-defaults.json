@@ -1,0 +1,28 @@
+{
+  "developer": 0,
+  "consoleEnable": 1,
+  "closeOnBuy": 0,
+  "autoHelp": 0,
+  "autoWeaponSwitch": 0,
+  "showPos": 0,
+  "showFps": 0,
+  "netGraph": 0,
+  "netGraphHeight": 64,
+  "netGraphPos": 1,
+  "rate": 786432,
+  "interp": 0,
+  "interpRatio": 1,
+  "bindings": {
+    "e": "+use",
+    "z": "radio",
+    "x": "radio2",
+    "c": "radio3",
+    "mouse5": "+voicerecord",
+    "q": "lastinv",
+    "shift": "+speed",
+    "ctrl": "+duck",
+    "space": "+jump",
+    "tab": "+showscores",
+    "esc": "cancelselect"
+  }
+}
