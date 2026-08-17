@@ -1,0 +1,29 @@
+{
+  "radarScale": 1,
+  "radarRotating": 1,
+  "radarSquare": 0,
+  "radarIconScale": 1,
+  "hudScale": 0.85,
+  "safeZoneX": 0.85,
+  "safeZoneY": 0.85,
+  "deathnotices": 0,
+  "crosshair": {
+    "style": 4,
+    "size": 2,
+    "gap": -2,
+    "thickness": 0.5,
+    "color": 1,
+    "colorR": 0,
+    "colorG": 255,
+    "colorB": 0,
+    "drawOutline": 1,
+    "outlineThickness": 1,
+    "scale": 600,
+    "t": 0,
+    "maxDist": 0.35,
+    "friendlyWarning": 1,
+    "sniperShow": 0,
+    "sniperWidth": 1,
+    "gapWeapon": 0
+  }
+}
